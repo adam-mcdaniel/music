@@ -58,7 +58,7 @@ module.exports = {
       },
 
       {
-        title: "Chip-Tune Augmented🎶",
+        title: "Chip-Tune Augmented🎵",
         cover: "augmented.webp",
         artist: "My Music Generator🤖",
         audio:
