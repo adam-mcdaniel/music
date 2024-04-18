@@ -38,4 +38,4 @@ To add music, go into `gatsby-config.js` and add your song information to the `s
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. This project is a modified version of [another Gatsby music player](https://github.com/ericholdridge/gatsby-music-player).
