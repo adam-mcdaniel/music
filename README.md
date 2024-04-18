@@ -4,7 +4,7 @@
 
 A simple music player for my website, written in JavaScript + React using Gatsby!
 
-I made this project mainly to showcase [my music generation library](https://github.com/adam-mcdaniel/music-generation), which sounds pretty good! I also wanted to a music player that was simple and easy to use, and that could be easily integrated into my website.
+I started work on this project mainly to showcase [my music generation library](https://github.com/adam-mcdaniel/music-generation), which sounds pretty good! I also wanted to a music player that was simple and easy to use, and that could be easily integrated into my website.
 
 ## Usage
 
