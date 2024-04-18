@@ -1,12 +1,23 @@
 import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faMusic, faAddressCard } from "@fortawesome/free-solid-svg-icons"
+import {
+  faAddressCard,
+  faGlobe,
+  faMusic,
+} from "@fortawesome/free-solid-svg-icons"
 import styled from "styled-components"
-import Container from "../components/Container"
+import Container from "../Container"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { navigate, withPrefix } from "gatsby"
 
-const Nav = ({ headerData, imageData, libraryStatus, setLibraryStatus }) => {
+const AboutNav = ({
+  headerData,
+  imageData,
+  libraryStatus,
+  setLibraryStatus,
+}) => {
+  // Get viewport width
+
   return (
     <StyledNav>
       <Container>
@@ -19,24 +30,23 @@ const Nav = ({ headerData, imageData, libraryStatus, setLibraryStatus }) => {
           />
         </h1>
         <div>
-          <button onClick={() => setLibraryStatus(!libraryStatus)}>
-            {"Library "}
+          <button onClick={() => navigate("/")}>
+            Player
             <FontAwesomeIcon
               aria-hidden="true"
               icon={faMusic}
               title="Music Library"
             />
           </button>
-          {/*Add spacing*/}
           <span> </span>
-          {/*Goto about page*/}
-          <button onClick={() => navigate("/about")}>
-            {"About "}
-            <FontAwesomeIcon
-              aria-hidden="true"
-              icon={faAddressCard}
-              title="About"
-            />
+          <button
+            onClick={() =>
+              (window.location.href = "https://adam-mcdaniel.github.io")
+            }
+          >
+              My Site
+              <span> </span>
+              <FontAwesomeIcon aria-hidden="true" icon={faGlobe} title="About" />
           </button>
         </div>
       </Container>
@@ -51,15 +61,25 @@ const StyledNav = styled.nav`
   .h1 {
     display: flex;
   }
+  .title {
+    position: relative;
+    top: -0.6rem;
+  }
   .image {
     width: 2.5em;
     position: relative;
     left: 0.2em;
     top: -0.6em;
+    // transform: translate(0.2em, -0.6em);
     vertical-align: top;
     border-radius: 50%;
     .gatsby-image-wrapper {
       border-radius: 50%;
+    }
+  }
+  @media (max-width: 470px) { /* Adjust 500px based on when you notice the image wraps */
+    .image {
+      display: none; /* This will hide the image */
     }
   }
   .container {
@@ -86,4 +106,4 @@ const StyledNav = styled.nav`
   }
 `
 
-export default Nav
+export default AboutNav

@@ -8,6 +8,8 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     font-family: 'Open Sans', sans-serif;
+    // font-family: "Roboto", sans-serif;
+    font-style: normal;
   }
   h1,h2,h3 {
     color: rgb(54,54,54);

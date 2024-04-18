@@ -1,9 +1,12 @@
 import React from "react"
 import styled from "styled-components"
 import { playAudio } from "../util"
-import Img from "gatsby-image"
+// Import useStaticQuery and graphql
+import { useStaticQuery, graphql } from "gatsby"
+import { GatsbyImage, getImage, getSrc, StaticImage } from "gatsby-plugin-image"
 
 const LibrarySong = ({
+  imageData,
   song,
   songs,
   setSongs,
@@ -18,7 +21,7 @@ const LibrarySong = ({
       songs.map(targetSong => {
         return {
           ...targetSong,
-          active: targetSong._id === song._id,
+          active: targetSong.id === song.id,
         }
       })
     )
@@ -31,7 +34,7 @@ const LibrarySong = ({
       className={`library-song ${song.active ? "selected" : ""}`}
     >
       <div className="image">
-        <Img fluid={song.cover.asset.fluid} alt={song.title} />
+        <GatsbyImage image={getImage(imageData[song.cover])} alt={song.title} />
       </div>
       <div className="song-description">
         <h3>{song.title}</h3>

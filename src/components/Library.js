@@ -1,8 +1,11 @@
 import React from "react"
 import styled from "styled-components"
 import LibrarySong from "./LibrarySong"
+import { useStaticQuery, graphql } from "gatsby"
+import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
 
 const Library = ({
+  imageData,
   songs,
   setSongs,
   setCurrentSong,
@@ -12,6 +15,29 @@ const Library = ({
   isPlaying,
   libraryStatus,
 }) => {
+  // const getSongImage = (song) => {
+  //   // const coverImage = song.cover;
+  //   // const data = useStaticQuery(graphql`
+  //   //   query($coverImage: String) {
+  //   //     file(relativePath: { eq: $coverImage }) {
+  //   //       childImageSharp {
+  //   //         fluid(maxWidth: 800) {
+  //   //           ...GatsbyImageSharpFluid
+  //   //         }
+  //   //       }
+  //   //     }
+  //   //   }
+  //   // `, { coverImage });
+  //   // const fluid = data.file.childImageSharp.fluid;
+  //   // if (fluid === null) {
+  //   //   console.log("Failed to get image for ", song, ": ", fluid, "...");
+  //   // }
+  //   // console.log("Got image for ", song, ": ", fluid, "...");
+  //   // return fluid;
+
+  //   return getImage(song.cover);
+  // }
+
   return (
     <StyledLibrary
       className={`library ${libraryStatus ? "active-library" : ""}`}
@@ -20,7 +46,8 @@ const Library = ({
       <div className="library-songs">
         {songs.map(song => (
           <LibrarySong
-            key={song._id}
+            imageData={imageData}
+            key={song.id}
             song={song}
             songs={songs}
             setSongs={setSongs}
@@ -53,7 +80,7 @@ const StyledLibrary = styled.div`
     padding: 14px 0;
   }
   .selected {
-    background: pink;
+    background: #77d6ff;
   }
   &.active-library {
     transform: translateX(0%);

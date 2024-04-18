@@ -1,16 +1,13 @@
 import React from "react"
 import styled from "styled-components"
-import Img from "gatsby-image"
+import { GatsbyImage, StaticImage, getImage, getSrc } from "gatsby-plugin-image";
 
-const Song = ({ currentSong }) => {
+const Song = ({ imageData, currentSong, isPlaying }) => {
   return (
     <StyledSong className="song">
       {console.log(currentSong)}
-      <div className="image">
-        <Img
-          fluid={currentSong.cover.asset.fluid}
-          alt={currentSong.title}
-        />
+      <div id="rotating-image" className={isPlaying? "rotating-image playing-image" : "rotating-image paused-image"}>
+          <GatsbyImage image={getImage(imageData[currentSong.cover])} alt={currentSong.title} />
       </div>
       <h2>{currentSong.title}</h2>
       <h3>{currentSong.artist}</h3>
@@ -25,12 +22,29 @@ const StyledSong = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  .image {
-    width: 20%;
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .rotating-image {
+    animation: rotate 20s linear infinite;
+    width: 30%;
     border-radius: 50%;
     .gatsby-image-wrapper {
       border-radius: 50%;
     }
+    animation-play-state: paused;
+  }
+  .paused-image {
+    animation-play-state: paused;
+  }
+  .playing-image {
+    animation-play-state: running;
   }
   h2 {
     padding: 3rem 1rem 1rem 1rem;

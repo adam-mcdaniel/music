@@ -5,6 +5,8 @@ import {
   faPause,
   faAngleLeft,
   faAngleRight,
+  faForward,
+  faBackward,
 } from "@fortawesome/free-solid-svg-icons"
 import styled from "styled-components"
 import { playAudio } from "../util"
@@ -21,6 +23,16 @@ const Player = ({
   setCurrentSong,
 }) => {
   const getTime = time => {
+    // If the time is above the song duration, set the player to be over
+    console.log("Getting time: ", songInfo.currentTime, "...")
+    if (
+      isPlaying &&
+      audioRef.current.currentTime >= audioRef.current.duration
+    ) {
+      // console.log("Time is over the song duration: ", time, " > ", songInfo.duration, "...");
+      setIsPlaying(false)
+    }
+
     return Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2)
   }
 
@@ -29,7 +41,7 @@ const Player = ({
       songs.map(targetSong => {
         return {
           ...targetSong,
-          active: targetSong._id === nextPrev._id,
+          active: targetSong.id === nextPrev.id,
         }
       })
     )
@@ -41,6 +53,9 @@ const Player = ({
       audioRef.current.pause()
       setIsPlaying(!isPlaying)
     } else {
+      if (audioRef.current.currentTime >= audioRef.current.duration) {
+        audioRef.current.currentTime = 0
+      }
       audioRef.current.play()
       setIsPlaying(!isPlaying)
     }
@@ -52,7 +67,7 @@ const Player = ({
   }
 
   const skipTrackHandler = async direction => {
-    let currentIndex = songs.findIndex(song => song._id === currentSong._id)
+    let currentIndex = songs.findIndex(song => song.id === currentSong.id)
     if (direction === "skip-forward") {
       await setCurrentSong(songs[(currentIndex + 1) % songs.length])
       activeLibraryHandler(songs[(currentIndex + 1) % songs.length])
@@ -88,7 +103,7 @@ const Player = ({
           onClick={() => skipTrackHandler("skip-reverse")}
           className="skip-reverse"
           size="2x"
-          icon={faAngleLeft}
+          icon={faBackward}
           title="reverse"
         />
         <FontAwesomeIcon
@@ -102,7 +117,8 @@ const Player = ({
           onClick={() => skipTrackHandler("skip-forward")}
           className="skip-forward"
           size="2x"
-          icon={faAngleRight}
+          icon={faForward}
+          // icon={['fas', 'angle-right']}
           title="forward"
         />
       </div>
@@ -130,11 +146,11 @@ const StyledPlayer = styled.div`
     }
   }
   .play-control {
-    width: 30%;
+    width: 40%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 1em 0em 3.5em 1em;
     svg {
       cursor: pointer;
     }
