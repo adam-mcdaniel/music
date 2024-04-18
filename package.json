@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "adam-music-player",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A music player for my website, adam-mcdaniel.net!",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Adam McDaniel <adam.mcdaniel17@gmail.com>",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
