@@ -66,7 +66,7 @@ const AboutBody = ({ headerData, imageData }) => {
                 I'm a software engineer, computer science graduate student, and musician. I love to learn and create new things. My favorite subject area is compiler design,<span> </span><a href="https://github.com/adam-mcdaniel">I've created several of my own programming languages!</a><span> </span>
                 My favorite programming language is certainly Rust, but I also extensively use C and C++. I also dabble in a bit of Haskell!
                 If you're interested in learning more about me, check out my<span> </span><a href="https://adam-mcdaniel.github.io/">personal site</a>,
-                <span> </span><a href="https://adam-mcdaniel.github.io/blog">blog</a>, and<span> </span><a href="my GitHub">GitHub</a>!
+                <span> </span><a href="https://adam-mcdaniel.github.io/blog">blog</a>, and<span> </span><a href="https://github.com/adam-mcdaniel/">GitHub</a>!
             </p>
         </Fade>
       </Container>
