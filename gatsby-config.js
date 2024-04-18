@@ -2,7 +2,7 @@ module.exports = {
   // siteURL: "/music",
   pathPrefix: "/music",
   siteMetadata: {
-    description: `React music player using Gatsby.js`,
+    description: `A music player for my website!`,
     author: `Adam McDaniel`,
     headerData: {
       title: "Adam's Music Player",
