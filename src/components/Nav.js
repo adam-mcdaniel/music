@@ -19,16 +19,6 @@ const Nav = ({ headerData, imageData, libraryStatus, setLibraryStatus }) => {
           />
         </h1>
         <div>
-          <button onClick={() => setLibraryStatus(!libraryStatus)}>
-            {"Library "}
-            <FontAwesomeIcon
-              aria-hidden="true"
-              icon={faMusic}
-              title="Music Library"
-            />
-          </button>
-          {/*Add spacing*/}
-          <span> </span>
           {/*Goto about page*/}
           <button onClick={() => navigate("/about")}>
             {"About "}
@@ -36,6 +26,16 @@ const Nav = ({ headerData, imageData, libraryStatus, setLibraryStatus }) => {
               aria-hidden="true"
               icon={faAddressCard}
               title="About"
+            />
+          </button>
+          {/*Add spacing*/}
+          <span> </span>
+          <button onClick={() => setLibraryStatus(!libraryStatus)}>
+            {"Library "}
+            <FontAwesomeIcon
+              aria-hidden="true"
+              icon={faMusic}
+              title="Music Library"
             />
           </button>
         </div>

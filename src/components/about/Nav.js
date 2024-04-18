@@ -30,15 +30,6 @@ const AboutNav = ({
           />
         </h1>
         <div>
-          <button onClick={() => navigate("/")}>
-            Player
-            <FontAwesomeIcon
-              aria-hidden="true"
-              icon={faMusic}
-              title="Music Library"
-            />
-          </button>
-          <span> </span>
           <button
             onClick={() =>
               (window.location.href = "https://adam-mcdaniel.github.io")
@@ -47,6 +38,15 @@ const AboutNav = ({
               My Site
               <span> </span>
               <FontAwesomeIcon aria-hidden="true" icon={faGlobe} title="About" />
+          </button>
+          <span> </span>
+          <button onClick={() => navigate("/")}>
+            Player
+            <FontAwesomeIcon
+              aria-hidden="true"
+              icon={faMusic}
+              title="Music Library"
+            />
           </button>
         </div>
       </Container>
