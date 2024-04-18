@@ -62,6 +62,11 @@ const StyledNav = styled.nav`
       border-radius: 50%;
     }
   }
+  @media (max-width: 470px) { /* Adjust 500px based on when you notice the image wraps */
+    .image {
+      display: none; /* This will hide the image */
+    }
+  }
   .container {
     display: flex;
     justify-content: space-between;
