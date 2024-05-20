@@ -6,17 +6,26 @@ module.exports = {
     author: `Adam McDaniel`,
     headerData: {
       title: "Adam's Music Player",
-      image: "mini-me.jpg",
+      image: "mini-me-circle.jpg",
     },
     songData: [
+      {
+        title: "Bring It On Home To Me🎶",
+        cover: "mini-me-circle.jpg",
+        artist: "Adam McDaniel🧑‍🦰",
+        audio:
+          "https://github.com/adam-mcdaniel/music/blob/main/assets/bring-it-on-home-to-me.mp3?raw=true",
+        id: 0,
+        active: true,
+      },
       {
         title: "Chip-Tune Major Blues🎵",
         cover: "major-blues.webp",
         artist: "My Music Generator🤖",
         audio:
           "https://github.com/adam-mcdaniel/music-generation/raw/main/examples/square_major_blues.wav",
-        id: 0,
-        active: true,
+        id: 1,
+        active: false,
       },
       {
         title: "Chip-Tune Major Pentatonic🎵",
@@ -24,7 +33,7 @@ module.exports = {
         artist: "My Music Generator🤖",
         audio:
           "https://github.com/adam-mcdaniel/music-generation/raw/main/examples/square_major_pentatonic.wav",
-        id: 1,
+        id: 2,
         active: false,
       },
       {
@@ -33,7 +42,7 @@ module.exports = {
         artist: "My Music Generator🤖",
         audio:
           "https://github.com/adam-mcdaniel/music-generation/raw/main/examples/square_minor_blues.wav",
-        id: 2,
+        id: 3,
         active: false,
       },
       {
@@ -42,7 +51,7 @@ module.exports = {
         artist: "My Music Generator🤖",
         audio:
           "https://github.com/adam-mcdaniel/music-generation/raw/main/examples/square_minor_pentatonic.wav",
-        id: 3,
+        id: 4,
         active: false,
       },
       {
@@ -51,7 +60,7 @@ module.exports = {
         artist: "My Music Generator🤖",
         audio:
           "https://github.com/adam-mcdaniel/music-generation/raw/main/examples/square_diminished.wav",
-        id: 4,
+        id: 5,
         active: false,
       },
 
@@ -61,7 +70,7 @@ module.exports = {
         artist: "My Music Generator🤖",
         audio:
           "https://github.com/adam-mcdaniel/music-generation/raw/main/examples/square_augmented.wav",
-        id: 5,
+        id: 6,
         active: false,
       },
     ],
